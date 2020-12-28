@@ -9,7 +9,10 @@ use App\Models\role;
 
 class PeopleController extends Controller{
     public function index($modul){
-        $data['title'] = $modul." | Airvels";
+        $data['title'] = ucfirst($modul)." | Airvels";
+        $data['modul'] = $modul;
+        $data['people'] = $modul=='admin'?admin::all():user::all();
+        return view('people.index',$data);
     }
 
     public function create(){

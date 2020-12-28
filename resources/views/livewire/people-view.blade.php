@@ -1,0 +1,1 @@
+<a wire:click='change({{$status}},"{{$modul}}",{{$key}})' type="button" class="btn btn-sm btn-{{$status=='1'?'success':'danger'}}" data-toggle="tooltip" title="{{$status=='1'?'Active':'Inactive'}}"><i class="fas fa-fw fa-eye {{$status=='1'?'':'-slash'}}"></i></a>

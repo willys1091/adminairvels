@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class admin extends Model{
     use HasFactory;
-
+    public $timestamps = false;
     protected $table = 'admin';
 
     public function post_hdr(){
