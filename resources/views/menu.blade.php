@@ -60,8 +60,6 @@
                     </a>
                 </li>
 
-               
-                
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                         aria-expanded="false" href="#">
@@ -70,17 +68,17 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('people/admin')}}">
+                            <a class="nav-main-link {{request::segment(2)=='admin'?"active":""}}" href="{{url('people/admin')}}">
                                 <span class="nav-main-link-name">Admin</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('people/user')}}">
+                            <a class="nav-main-link {{request::segment(2)=='user'?"active":""}}" href="{{url('people/user')}}">
                                 <span class="nav-main-link-name">User</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="{{url('role')}}">
+                            <a class="nav-main-link {{request::segment(1)=='role'?"active":""}}" href="{{url('role')}}">
                                 <span class="nav-main-link-name">Role</span>
                             </a>
                         </li>

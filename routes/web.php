@@ -20,6 +20,9 @@ Route::get('forgot', "MainController@forgot");
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', "MainController@dashboard");
     Route::get('people/{modul}', "PeopleController@index");
-    Route::get('role', "PeopleController@role");
+    Route::get('people/{modul}/create', "PeopleController@create");
+    Route::post('people', "PeopleController@store");
+    Route::get('people/{modul}/{id}/edit', "PeopleController@edit");
+    Route::get('role', "RoleController@index");
     Route::get('logout', "MainController@logout");
 });

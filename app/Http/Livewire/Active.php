@@ -5,12 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\admin;
 
-class PeopleView extends Component
-{
-    public $status;
-    public $status2;
-    public $modul;
-    public $key;
+class Active extends Component{
+    public $status,$status2,$modul,$key;
 
     public function mount($status,$modul,$key){
         $this->status = $status;
@@ -30,8 +26,7 @@ class PeopleView extends Component
         $data->update_user = Session('id');
         $data->save();
     }
-
     public function render(){
-        return view('livewire.people-view');
+        return view('livewire.active');
     }
 }

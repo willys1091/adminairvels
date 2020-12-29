@@ -6,6 +6,7 @@ $(".numonly").on("keypress keyup blur",function (event) {
 });
 
 jQuery('.js-dataTable').dataTable({
+    
     pagingType: "full_numbers",
     
     pageLength: 10,
@@ -30,6 +31,7 @@ jQuery('.js-dataTable').dataTable({
       targets  : 'no-sort',
       orderable: false,
     }]
+    
 });
 
 var myRefreshTimeout;

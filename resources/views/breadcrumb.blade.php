@@ -20,7 +20,7 @@
                                 class="{{$btn['icon']}}"></i></button>
                     @elseif($contentHeader=='bc')
                         <ol class="breadcrumb breadcrumb-alt">
-                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('dashboard')}}"><i class='fas fa-home'></i></a></li>
                             @foreach($bc as $bc)
                             <li class="breadcrumb-item {{$bc['active']=='1'?'active':''}}">
                                 {!!$bc['active']=='1'?$bc['title']:'<a href="'.url($bc['url']).'">'.$bc['title'].'</a>'!!}</li>
