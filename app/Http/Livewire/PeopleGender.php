@@ -9,15 +9,13 @@ class PeopleGender extends Component{
 
     public function mount($action,$datagender){
         $this->action = $action;
-        $this->gender = "Male";
+        $this->datagender = $datagender;
+        $this->check = $action=='edit'?$datagender=='Female'?'1':'':'';
+        $this->gender = $action=='edit'?$datagender:"Male";
     }
 
     public function updated(){
-        if(!$this->check){
-            $this->gender='Male';
-        }else{
-            $this->gender='Female';
-        }
+        $this->gender = !$this->check?'Male':'Female';
     }
     
     public function render(){

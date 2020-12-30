@@ -43,15 +43,6 @@ class PeopleController extends Controller{
             $data->name = $request->name;
             $data->password = md5($request->password);
             $data->active = '1';
-        }else{
-            // $data = new user;
-            // $data-> = $request->;
-            // $data-> = $request->;
-            // $data-> = $request->;
-            // $data-> = $request->;
-            // $data-> = $request->;
-            // $data-> = $request->;
-
         }
         $data->create_date = date("Y-m-d H:i:s");
         $data->create_user = Session('id');
@@ -82,10 +73,13 @@ class PeopleController extends Controller{
             $data->title = $request->title;
             $data->email = $request->email;
             $data->name = $request->name;
-            $data->password = md5($request->password);
+            $request->password<>''?$data->password = md5($request->password):'';
             $data->active = '1';
         }else{
-            
+            $data = user::findorfail($id);
+            $data->name = $request->name;
+            $data->language = $request->language;
+            $data->gender = $request->gender=='1'?"Female":"Male";
         }
         $data->update_date = date("Y-m-d H:i:s");
         $data->update_user = Session('id');

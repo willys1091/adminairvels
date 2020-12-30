@@ -19,10 +19,14 @@ Route::get('forgot', "MainController@forgot");
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', "MainController@dashboard");
+    
     Route::get('people/{modul}', "PeopleController@index");
     Route::get('people/{modul}/create', "PeopleController@create");
     Route::post('people', "PeopleController@store");
     Route::get('people/{modul}/{id}/edit', "PeopleController@edit");
+    Route::patch('people/{id}', "PeopleController@update");
+
     Route::get('role', "RoleController@index");
+
     Route::get('logout', "MainController@logout");
 });

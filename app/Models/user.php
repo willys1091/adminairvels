@@ -11,7 +11,18 @@ class user extends Model{
 
     protected $table = 'user';
 
-    public function post_view(){
-        return $this->hasMany('App\post_view');
+    public function reff()
+    {
+        return $this->belongsTo(self::class, 'refferal');
     }
+
+    //   public function children()
+    // {
+    //     return $this->hasMany(self::class, 'refferal');
+    // }
+    // public function post_view(){
+    //     return $this->hasMany('App\post_view');
+    // }
+
+
 }
