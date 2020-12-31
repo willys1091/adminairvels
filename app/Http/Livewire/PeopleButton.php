@@ -20,8 +20,6 @@ class PeopleButton extends Component{
 
     public function render(){
         return view('livewire.people-button');
-    }
-
-    
+    }    
     
 }

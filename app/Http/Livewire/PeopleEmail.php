@@ -21,8 +21,7 @@ class PeopleEmail extends Component{
         }
         $this->emit('refreshParent',$this->jumlah);
     }
-
-
+    
     public function render(){
         return view('livewire.people-email');
     }

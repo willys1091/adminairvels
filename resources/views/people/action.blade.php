@@ -60,19 +60,16 @@
                 </div>
             </div>   
         @endif
-            
-       
+
         @livewire('people-button',['action' => $action])
-        {{-- @livewire('test') --}}
     </div> 
     </form>
 </div>
-@livewireScripts
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 <script>
     Livewire.restart();
-    
+   
     jQuery(function () {
         Siap.helpers(['flatpickr', 'select2']);
     });
