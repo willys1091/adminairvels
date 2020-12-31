@@ -27,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('people/{id}', "PeopleController@update");
 
     Route::get('role', "RoleController@index");
+    Route::get('role/create', "RoleController@create");
+    Route::post('role' , "RoleController@store");
+    Route::get('role/{id}/edit' , "RoleController@edit");
+    Route::Patch('role/{id}' , "RoleController@update");
 
     Route::get('logout', "MainController@logout");
 });

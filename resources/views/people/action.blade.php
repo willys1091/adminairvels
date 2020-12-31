@@ -17,16 +17,9 @@
     <div class="block-content font-size-sm">
         <div class="row">
             @livewire('people-email', ['action' => $action , 'dataemail' => $data->email ?? 0])
+            
             @if($modul=='admin')
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="Name">&nbsp;</label>
-                        <div class="custom-control custom-checkbox custom-checkbox-square custom-control-lg custom-control-info mb-1">
-                            <input type="checkbox" class="custom-control-input admin" id="admin" name="admin" value="1" {{$action=='edit'? $data->type=='admin'?"checked":"":''}}>
-                            <label class="custom-control-label font-w600" for="admin">Admin</label>
-                        </div>
-                    </div>
-                </div>
+                @livewire('people-type', ['action' => $action , 'datatype' => $data->type ?? 0])
             @elseif($modul =='user')
                 @livewire('people-gender', ['action' => $action , 'datagender' => $data->gender ?? 0])
             @endif
@@ -40,17 +33,8 @@
                 </div>
             </div>
             @if($modul=='admin')
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="Role">Role <span class="merah">*</span></label>
-                        <select class="js-select2 form-control" name="role" style="width: 100%;" data-placeholder="Choose one..">
-                            <option></option>
-                            @foreach($role as $r)
-                                <option value="{{$r->id}}"{{$action=='edit'?$data->roleid==$r->id?'selected':'':''}}>{{$r->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+            @livewire('people-role', ['action' => $action , 'datarole' => $data->roleid ?? 0])
+                
             @else
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -83,10 +67,12 @@
     </div> 
     </form>
 </div>
+@livewireScripts
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 <script>
     Livewire.restart();
+    
     jQuery(function () {
         Siap.helpers(['flatpickr', 'select2']);
     });

@@ -9,9 +9,7 @@
                     <tr>
                         <th class="text-center">ID</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        {!! $modul=='admin'?'<th>Title</th>':'' !!}
-                        {!! $modul=='user'?'<th>Source</th>':'' !!}
+                        <th>Type</th>
                        
                         <th></th>
                     </tr>
