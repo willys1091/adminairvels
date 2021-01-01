@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\role;
 use Session;
+use App\Models\role;
 
 class RoleController extends Controller{
     public function index(){
