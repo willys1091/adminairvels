@@ -38,7 +38,7 @@
             @else
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label for="Name">Title </label>
+                        <label for="Name">Language </label>
                         <input type="text" class="form-control" name="language" placeholder="Language" value="{{$action=='edit'?$data->language:''}}" >
                     </div>
                 </div>
@@ -65,6 +65,7 @@
     </div> 
     </form>
 </div>
+@stack('scripts')
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 <script>

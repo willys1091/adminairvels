@@ -26,6 +26,11 @@
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="be_tables_styles.html">
+                                <span class="nav-main-link-name">Category</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="be_tables_styles.html">
                                 <span class="nav-main-link-name">Country</span>
                             </a>
                         </li>

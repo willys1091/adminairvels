@@ -7,15 +7,23 @@ use App\Models\role;
 
 class PeopleRole extends Component
 {
-    public $type=[];
-    public $name = 'Livewire';
+    public $data=[];
+    public $tipes='user';
+
     protected $listeners = ['role'];
 
-    public function role($type){
-        //$this->type = role::where('type',$type)->get();
-        $this->name = 'Alpine';
-        $this->dispatchBrowserEvent('name-changed',['name'=>$this->name]);
+    public function mount($action,$datarole){
+        $this->data = role::where('type',$this->tipes)->get();
     }
+
+    public function updated(){
+        $this->data = role::where('type',$this->tipes)->get();
+    }
+
+    public function role($type){
+        $this->dispatchBrowserEvent('gettype',['name'=>$type]);
+    }
+
     public function render()
     {
         return view('livewire.people-role');

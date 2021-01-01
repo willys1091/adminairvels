@@ -11,6 +11,7 @@ use App\Models\role;
 class PeopleController extends Controller{
     public function index($modul){
         $data['title'] = ucfirst($modul)." | Airvels";
+        $data['subtitle'] = "List of ".ucfirst($modul);
         $data['modul'] = $modul;
         if($modul=='admin'){
             $data['contentHeader'] = "mdl";

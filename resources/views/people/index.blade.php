@@ -26,7 +26,7 @@
                         <td class="d-sm-table-cell font-size-sm font-w600"><a href="{{url('people/'.$p->id.'/detail')}}">{{ucwords($p->name)}}</a></td>
                         @if($modul=='admin')
                             <td class="d-sm-table-cell font-size-sm">{{$p->title}}</td>
-                            <td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$p->type=='admin'?'danger':'success'}}">{{ucwords($p->type)}}</span> </td>
+                            <td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$p->type=='admin'?'danger':'success'}}">{{ucwords($p->type)}}</span></td>
                         @endif
                         @if($modul=='user')<td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$p->source=='google'?'danger':'primary'}}">{{ucwords($p->source)}}</span> </td> <td class="d-sm-table-cell font-size-sm">{!!$p->refferal<>''?$p->reff->name:'<em class="text-muted font-size-sm">None</em>'!!}</td> @endif
                         <td class="text-center">

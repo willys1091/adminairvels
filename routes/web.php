@@ -19,6 +19,24 @@ Route::get('forgot', "MainController@forgot");
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', "MainController@dashboard");
+
+    Route::get('category', "CategoryController@index");
+    Route::get('category/create', "CategoryController@create");
+    Route::post('category' , "CategoryController@store");
+    Route::get('category/{id}/edit' , "CategoryController@edit");
+    Route::Patch('category/{id}' , "CategoryController@update");
+
+    Route::get('country', "CountryController@index");
+    Route::get('country/create', "CountryController@create");
+    Route::post('country' , "CountryController@store");
+    Route::get('country/{id}/edit' , "CountryController@edit");
+    Route::Patch('country/{id}' , "CountryController@update");
+
+    Route::get('destination', "DestinationController@index");
+    Route::get('destination/create', "DestinationController@create");
+    Route::post('destination' , "DestinationController@store");
+    Route::get('destination/{id}/edit' , "DestinationController@edit");
+    Route::Patch('destination/{id}' , "DestinationController@update");
     
     Route::get('people/{modul}', "PeopleController@index");
     Route::get('people/{modul}/create', "PeopleController@create");

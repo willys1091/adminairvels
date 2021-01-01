@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-@inject('GeneralTrait', 'App\Http\Controllers\PeopleController')
+{{-- @inject('GeneralTrait', 'App\Http\Controllers\PeopleController') --}}
 <div class="content">
     <div class="block block-rounded">
         <div class="block-content block-content-full">
@@ -10,24 +10,20 @@
                         <th class="text-center">ID</th>
                         <th>Name</th>
                         <th>Type</th>
-                       
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $x=1 @endphp
-                    @foreach($people as $p)
+                    @foreach($role as $r)
                     <tr>
                         <td class="text-center font-size-sm">{{$x}}</td>
-                        <td class="d-sm-table-cell font-size-sm">{{$p->email}}</td>
-                        <td class="d-sm-table-cell font-size-sm font-w600"><a href="{{url('people/'.$p->id.'/detail')}}">{{ucwords($p->name)}}</a></td>
-                        @if($modul=='admin')<td class="d-sm-table-cell font-size-sm">{{$p->title}}</td>@endif
-                        @if($modul=='user')<td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$p->source=='google'?'danger':'primary'}}">{{ucwords($p->source)}}</span> </td> @endif
-                       
+                        <td class="d-sm-table-cell font-size-sm">{{$r->name}}</td>
+                        <td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$r->type=='admin'?'danger':'success'}}">{{ucwords($r->type)}}</span></td>
+                        
                         <td class="text-center">
                             <div class="btn-group">
-                                @if($modul=='admin') @livewire('people-view', ['status' => $p->active,'modul'=> $modul,'key'=> $p->id]) @endif
-                                <a onClick='showM("{{url('people/'.$modul.'/'.$p->id.'/edit')}}");return false' type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></a>
+                                <a href="{{url('role/'.$r->id.'/edit')}}" type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></a>
                             </div>
                         </td> 
                     </tr>
@@ -48,7 +44,7 @@
     <link rel="stylesheet" id="css-main" href="{{asset('public/js/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('public/js/plugins/flatpickr/flatpickr.min.css')}}">
 @endsection
-s
+
 @section ('footerScript')
     @livewireScripts
     <script src="{{asset('public/js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -61,18 +57,5 @@ s
     <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
     <script src="{{asset('public/js/siapfulin.js')}}"></script>
-    <script>
-        function status(id,active) {
-            $.ajax({
-                    type: "POST",
-                    url: "{{url('people/active')}}",
-                    data: {'_token': "{{ csrf_token() }}",'id': id,'active': active},
-                    cache: false,
-                    success: function(html){
-                        $(".table").load(location.href + " .table");
-                    }
-                });
-            $(".table").load(location.href + " .table");
-        }
-    </script>
+    
 @endsection
