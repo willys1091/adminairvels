@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Models\admin;
+use App\Models\user;
+use App\Models\destination;
 
 class MainController extends Controller{
-    use \App\Traits\GeneralTrait;
+    use \App\Traits\General;
     public function index(){
         $data['title'] = "Login | Airvels";
         if(Session::has('id')){
@@ -48,6 +50,9 @@ class MainController extends Controller{
 
     public function dashboard(){
         $data['title'] = "Dashboard| Airvels";
+        $data['totaldestination'] = destination::count();
+        $data['totalnewuser'] = user::whereMonth('create_date', '=', date('m'))->count();
+        $data['totalyoutuber'] = admin::where('type', 'user')->count();
         return view('main.dashboard', $data);
     }
 

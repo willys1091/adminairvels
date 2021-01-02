@@ -24,7 +24,17 @@ class CountryController extends Controller{
     }
 
     public function store(Request $request){
-        //
+        $data = new country;
+        $data->name = $request->name;
+        // $data->img_background = ;
+        // $data->img_banner = ;
+        $data->desc_banner = $request->desc;
+        $data->create_date = date("Y-m-d H:i:s");
+        $data->create_user = Session('id');
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Add Country Successfull');
+        return redirect('country');
     }
 
     public function show($id){
@@ -39,7 +49,17 @@ class CountryController extends Controller{
     }
 
     public function update(Request $request, $id){
-        //
+        $data = country::findorfail($id);
+        $data->name = $request->name;
+        // $data->img_background = ;
+        // $data->img_banner = ;
+        $data->desc_banner = $request->desc;
+        $data->create_date = date("Y-m-d H:i:s");
+        $data->create_user = Session('id');
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Edit Country Successfull');
+        return redirect('country');
     }
 
     public function destroy($id){

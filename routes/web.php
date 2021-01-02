@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('people/{modul}', "PeopleController@index");
     Route::get('people/{modul}/create', "PeopleController@create");
+    Route::get('people/{modul}/youtuber', "PeopleController@youtuber");
     Route::post('people', "PeopleController@store");
     Route::get('people/{modul}/{id}/edit', "PeopleController@edit");
     Route::patch('people/{id}', "PeopleController@update");

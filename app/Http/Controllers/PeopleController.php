@@ -90,7 +90,13 @@ class PeopleController extends Controller{
         return redirect('people/'.$request->modul);
     }
 
-    public function destroy($id){
-        
+    public function youtuber(){
+        $data['title'] = "Youtuber | Airvels";
+        $data['subtitle'] = "List of Youtuber";
+        $data['modul'] = "admin";
+        $data['contentHeader'] = "mdl";
+        $data['btn'] = array('title' => 'Add Youtuber', 'url' => 'people/admin/create', 'icon' => 'fas fa-plus');
+        $data['people'] = admin::where('type','user')->get();
+        return view('people.index',$data);
     }
 }

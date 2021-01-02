@@ -24,7 +24,24 @@ class DestinationController extends Controller{
     }
 
     public function store(Request $request){
-        //
+        $data = new destination;
+        $data->name = $request->name;
+        // $data->country_id = $request->;
+        // $data->state = $request->;
+        // $data->city = $request->;
+        // $data->map = $request->;
+        // $data->address = $request->;
+        // $data->phone = $request->;
+        // $data->website = $request->;
+        // $data->work_hour = $request->;
+        // $data->currency = $request->;
+        // $data->price = $request->;
+        $data->create_date = date("Y-m-d H:i:s");
+        $data->create_user = Session('id');
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Add Destination Successfull');
+        return redirect('destination');
     }
 
     public function show($id){
@@ -41,7 +58,24 @@ class DestinationController extends Controller{
     }
 
     public function update(Request $request, $id){
-        //
+        $data = destination::findorfail($id);
+        $data->name = $request->name;
+        // $data->country_id = $request->;
+        // $data->state = $request->;
+        // $data->city = $request->;
+        // $data->map = $request->;
+        // $data->address = $request->;
+        // $data->phone = $request->;
+        // $data->website = $request->;
+        // $data->work_hour = $request->;
+        // $data->currency = $request->;
+        // $data->price = $request->;
+        $data->create_date = date("Y-m-d H:i:s");
+        $data->create_user = Session('id');
+        $data->save();
+        session::flash('error','success');
+        session::flash('message','Edit Destination Successfull');
+        return redirect('destination');
     }
 
     public function destroy($id){
