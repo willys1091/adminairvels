@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('destination', "DestinationController@index");
     Route::get('destination/create', "DestinationController@create");
     Route::post('destination' , "DestinationController@store");
+    Route::get('destination/{id}/show' , "DestinationController@show");
     Route::get('destination/{id}/edit' , "DestinationController@edit");
     Route::Patch('destination/{id}' , "DestinationController@update");
     

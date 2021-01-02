@@ -54,7 +54,7 @@ class PeopleController extends Controller{
     }
 
     public function show($id){
-        //
+        
     }
 
     public function edit($modul,$id){
@@ -86,11 +86,11 @@ class PeopleController extends Controller{
         $data->update_user = Session('id');
         $data->save();
         session::flash('error','success');
-        session::flash('message','Edited '.$request->modul.' Successfull');
+        session::flash('message','Edit '.$request->modul.' Successfull');
         return redirect('people/'.$request->modul);
     }
 
     public function destroy($id){
-        //
+        
     }
 }

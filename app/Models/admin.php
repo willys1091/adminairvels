@@ -13,6 +13,6 @@ class admin extends Model{
     protected $table = 'admin';
 
     public function post_hdr(){
-        return $this->hasMany('App\post_hdr');
+        return $this->hasMany('App\Models\post_hdr');
     }
 }

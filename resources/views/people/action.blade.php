@@ -65,7 +65,6 @@
     </div> 
     </form>
 </div>
-@stack('scripts')
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 <script>

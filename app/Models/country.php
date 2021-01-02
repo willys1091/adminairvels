@@ -13,10 +13,10 @@ class country extends Model{
     protected $table = 'country';
 
     public function post_hdr(){
-        return $this->hasMany('App\post_hdr');
+        return $this->hasMany('App\Models\post_hdr');
     }
 
     public function destination(){
-        return $this->hasMany('App\destination');
+        return $this->hasMany('App\Models\destination');
     }
 }

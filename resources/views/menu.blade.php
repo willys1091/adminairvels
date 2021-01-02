@@ -17,25 +17,23 @@
                 </li>
                
                
-                <li class="nav-main-item">
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
-                        aria-expanded="false" href="#">
-                        <i class="nav-main-link-icon fa fa-truck"></i>
-                        <span class="nav-main-link-name">Attribute</span>
+                <li class="nav-main-item {{request::segment(1)=='category'||request::segment(1)=='country'||request::segment(1)=='destination'?'open':''}}">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i class="nav-main-link-icon fa fa-truck"></i><span class="nav-main-link-name">Attribute</span>
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="be_tables_styles.html">
+                            <a class="nav-main-link {{request::segment(1)=='category'?"active":""}}" href="{{url('category')}}">
                                 <span class="nav-main-link-name">Category</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="be_tables_styles.html">
+                            <a class="nav-main-link {{request::segment(1)=='country'?"active":""}}" href="{{url('country')}}">
                                 <span class="nav-main-link-name">Country</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="be_tables_responsive.html">
+                            <a class="nav-main-link {{request::segment(1)=='destination'?"active":""}}" href="{{url('destination')}}">
                                 <span class="nav-main-link-name">Destination</span>
                             </a>
                         </li>

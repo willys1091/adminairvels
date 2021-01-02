@@ -10,10 +10,8 @@ use App\Models\product;
 use App\Models\setting;
 use Exception;
 
-trait GeneralTrait
-{
-    public function timezone()
-    {
+trait General{
+    public function timezone(){
         return date_default_timezone_set(config::where('name', 'timezone')->value('value') ?? "Asia/Jakarta");
     }
 
@@ -27,8 +25,7 @@ trait GeneralTrait
         return preg_replace("/[^a-zA-Z]/", $replace, $string);
     }
 
-    public function smartDatepast($timestamp)
-    {
+    public function smartDatepast($timestamp){
         $diff = time() - $timestamp;
         if ($diff <= 0) {
             return 'Now';
@@ -47,8 +44,7 @@ trait GeneralTrait
         }
     }
 
-    public function smartDatefuture($timestamp)
-    {
+    public function smartDatefuture($timestamp){
         $diff =  $timestamp - time();
         if ($diff <= 0) {
             return 'Expired';
@@ -67,8 +63,7 @@ trait GeneralTrait
         }
     }
 
-    public function convertday($day)
-    {
+    public function convertday($day){
         if ($day == 'Monday') return "Senin";
         elseif ($day == 'Tuesday') return "Selasa";
         elseif ($day == 'Wednesday') return "Rabu";
@@ -78,14 +73,18 @@ trait GeneralTrait
         elseif ($day == 'Sunday') return "Minggu";
     }
 
-    public function _x($sg, $pl, $count)
-    {
+    public function _x($sg, $pl, $count){
         if ($count == "1") return sprintf($sg, $count);
         elseif ($count > 1) return sprintf($pl, $count);
     }
+    
+    public function readmore($text,$length){
+		$rm = substr($text,0,$length);
+		$rm = strlen($text)>$length?substr($rm,0,strrpos($rm,' '))."...":$rm;
+		return $rm;
+    }
 
-    public function SendEmail($email, $name, $param)
-    {
+    public function SendEmail($email, $name, $param){
         try {
             $notif = DB::table('notificationtemplates')->where('name', $name)->first();
             $subject = $notif->subject;
@@ -124,12 +123,8 @@ trait GeneralTrait
             return false;
         }
     }
-    public function getSession(string $key)
-    {
-        return Session($key);
-    }
-    public function getSettings(string $group, string $name = '')
-    {
+  
+    public function getSettings(string $group, string $name = ''){
         if (isset($name) && $name != '') {
             $value = setting::where('group', $group)->where('name', $name)->where('active', true)->firstOrFail()->value;
         } else {

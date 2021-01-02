@@ -1,6 +1,5 @@
 @extends('template')
 @section('content')
-@inject('GeneralTrait', 'App\Http\Controllers\PeopleController')
 <div class="content">
     <div class="block block-rounded">
         <div class="block-content block-content-full"> 
