@@ -31,6 +31,57 @@
                 <div class="row">
                     @php $perms = $action=='edit'? unserialize($role->perms):""  @endphp
                     <div class="form-group col-md-3">
+                        <div class=""><h5>Country</h5>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="AddCountry" name="perms[]" {{$action =='edit'? in_array("AddCountry",$perms)?"checked":"":''}} value = "AddCountry">
+                                <label class="custom-control-label" for="AddCountry">Add</label>  
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="EditCountry" name="perms[]" {{$action == 'edit'? in_array("EditCountry",$perms)?"checked":"":''}} value = "EditCountry">
+                                <label class="custom-control-label" for="EditCountry">Edit</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="ViewCountry" name="perms[]" {{$action=='edit'? in_array("ViewCountry",$perms)?"checked":"":''}} value = "ViewCountry">
+                                <label class="custom-control-label" for="ViewCountry">View</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <div class=""><h5>Category</h5>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="AddCategory" name="perms[]" {{$action =='edit'? in_array("AddCategory",$perms)?"checked":"":''}} value = "AddCategory">
+                                <label class="custom-control-label" for="AddCategory">Add</label>  
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="EditCategory" name="perms[]" {{$action == 'edit'? in_array("EditCategory",$perms)?"checked":"":''}} value = "EditCategory">
+                                <label class="custom-control-label" for="EditCategory">Edit</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="ViewCategory" name="perms[]" {{$action=='edit'? in_array("ViewCategory",$perms)?"checked":"":''}} value = "ViewCategory">
+                                <label class="custom-control-label" for="ViewCategory">View</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <div class=""><h5>Destination</h5>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="AddDestination" name="perms[]" {{$action =='edit'? in_array("AddDestination",$perms)?"checked":"":''}} value = "AddDestination">
+                                <label class="custom-control-label" for="AddDestination">Add</label>  
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="EditDestination" name="perms[]" {{$action == 'edit'? in_array("EditDestination",$perms)?"checked":"":''}} value = "EditDestination">
+                                <label class="custom-control-label" for="EditDestination">Edit</label>
+                            </div>
+                            <div class="custom-control custom-checkbox custom-control-lg mb-1">
+                                <input type="checkbox" class="custom-control-input" id="ViewDestination" name="perms[]" {{$action=='edit'? in_array("ViewDestination",$perms)?"checked":"":''}} value = "ViewDestination">
+                                <label class="custom-control-label" for="ViewDestination">View</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
                         <div class=""><h5>Admin</h5>
                             <div class="custom-control custom-checkbox custom-control-lg mb-1">
                                 <input type="checkbox" class="custom-control-input" id="AddAdmin" name="perms[]" {{$action =='edit'? in_array("AddAdmin",$perms)?"checked":"":''}} value = "AddAdmin">

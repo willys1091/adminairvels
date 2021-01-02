@@ -16,10 +16,6 @@ class user extends Model{
         return $this->belongsTo(self::class, 'refferal');
     }
 
-    //   public function children()
-    // {
-    //     return $this->hasMany(self::class, 'refferal');
-    // }
     // public function post_view(){
     //     return $this->hasMany('App\post_view');
     // }
