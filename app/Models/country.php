@@ -12,6 +12,10 @@ class country extends Model{
 	
     protected $table = 'country';
 
+    protected $attributes = [
+		'active' => 1,
+	];
+
     public function post_hdr(){
         return $this->hasMany('App\Models\post_hdr');
     }

@@ -55,17 +55,13 @@
                 <div
                     class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">{{number_format($totalnewuser,0,",",".")}}</dt>
-                        <dd class="text-muted mb-0">New Users</dd>
+                        <dt class="font-size-h2 font-w700">{{number_format($totalnewuser,0,",",".")}}</dt><dd class="text-muted mb-0">New Users</dd>
                     </dl>
-                    <div class="item item-rounded bg-body">
-                        <i class="fa fa-users font-size-h3 text-primary"></i>
-                    </div>
+                    <div class="item item-rounded bg-body"><i class="fa fa-users font-size-h3 text-primary"></i></div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                     <a class="font-w500 d-flex align-items-center" href="{{url('destination')}}">
-                        View all User
-                        <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
+                        View all User<i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
             </div>
@@ -75,17 +71,13 @@
                 <div
                     class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">{{number_format($totalyoutuber,0,",",".")}}</dt> 
-                        <dd class="text-muted mb-0">Youtuber</dd>
+                        <dt class="font-size-h2 font-w700">{{number_format($totalyoutuber,0,",",".")}}</dt> <dd class="text-muted mb-0">Youtuber</dd>
                     </dl>
-                    <div class="item item-rounded bg-body">
-                        <i class="fa fa-inbox font-size-h3 text-primary"></i>
-                    </div>
+                    <div class="item item-rounded bg-body"><i class="fa fa-inbox font-size-h3 text-primary"></i></div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                     <a class="font-w500 d-flex align-items-center" href="{{url('people/admin/youtuber')}}">
-                        View all Youtuber
-                        <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
+                        View all Youtuber<i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
             </div>
@@ -95,8 +87,8 @@
                 <div
                     class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">4.5%</dt>
-                        <dd class="text-muted mb-0">Video</dd>
+                        <dt class="font-size-h2 font-w700">{{$totalvideo}}</dt>
+                        <dd class="text-muted mb-0">Post Video</dd>
                     </dl>
                     <div class="item item-rounded bg-body">
                         <i class="fa fa-chart-line font-size-h3 text-primary"></i>
@@ -104,8 +96,7 @@
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                     <a class="font-w500 d-flex align-items-center" href="javascript:void(0)">
-                        View statistics
-                        <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
+                        View All Video<i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
             </div>

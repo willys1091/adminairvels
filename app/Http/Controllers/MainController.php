@@ -7,6 +7,7 @@ use Session;
 use App\Models\admin;
 use App\Models\user;
 use App\Models\destination;
+use App\Models\post_hdr;
 
 class MainController extends Controller{
     use \App\Traits\General;
@@ -53,6 +54,7 @@ class MainController extends Controller{
         $data['totaldestination'] = destination::count();
         $data['totalnewuser'] = user::whereMonth('create_date', '=', date('m'))->count();
         $data['totalyoutuber'] = admin::where('type', 'user')->count();
+        $data['totalvideo'] = post_hdr::where('status','post')->count();
         return view('main.dashboard', $data);
     }
 

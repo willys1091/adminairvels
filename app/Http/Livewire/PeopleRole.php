@@ -13,7 +13,7 @@ class PeopleRole extends Component
     protected $listeners = ['role'];
 
     public function mount($action,$datarole){
-        $this->data = role::where('type',$this->tipes)->get();
+        $this->updated();
     }
 
     public function updated(){
@@ -24,8 +24,7 @@ class PeopleRole extends Component
         $this->dispatchBrowserEvent('gettype',['name'=>$type]);
     }
 
-    public function render()
-    {
+    public function render(){
         return view('livewire.people-role');
     }
 

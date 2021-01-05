@@ -19,7 +19,7 @@
             @livewire('people-email', ['action' => $action , 'dataemail' => $data->email ?? 0])
             
             @if($modul=='admin')
-                @livewire('people-type', ['action' => $action , 'datatype' => $data->type ?? 0])
+                @livewire('people-type', ['action' => $action , 'datatype' => $data->type ?? 0, "id_field" => "people_type"])
             @elseif($modul =='user')
                 @livewire('people-gender', ['action' => $action , 'datagender' => $data->gender ?? 0])
             @endif
@@ -34,7 +34,9 @@
             </div>
             @if($modul=='admin')
             @livewire('people-role', ['action' => $action , 'datarole' => $data->roleid ?? 0])
-                
+            
+
+
             @else
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -67,6 +69,7 @@
 </div>
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+@stack('scripts')
 <script>
     Livewire.restart();
    

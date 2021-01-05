@@ -66,4 +66,12 @@
     <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
     <script src="{{asset('public/js/siapfulin.js')}}"></script>
+    <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
+@stack('scripts')
+<script>
+    
+    jQuery(function () {
+        Siap.helpers(['flatpickr', 'select2']);
+    });
+</script>
 @endsection

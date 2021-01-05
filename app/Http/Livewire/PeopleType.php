@@ -9,9 +9,10 @@ class PeopleType extends Component{
     public $test;
 
     public function mount($action,$datatype){
+        
         $this->action = $action;
         $this->datatype = $datatype;
-        $this->check = $action=='edit'?$datatype=='admin'?'1':'':'';
+        $this->check = $action=='edit'?($datatype=='admin'?'1':''):'';
     }
 
     public function updated(){
