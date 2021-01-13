@@ -7,7 +7,6 @@
                 <form action="{{url('role')}}" method="post" onsubmit="submit.disabled = true; return true;" name="roleform">
             @else
                 <form action="{{url('role/'.$role->id)}}" method="post" name="roleform"> @method('patch')
-                <input type="hidden" name="id" value="{{$role->id}}"/>
             @endif @csrf
                 <div class="row">
                     <div class="col-lg-6">

@@ -25,7 +25,7 @@
                         <td class="text-center font-size-sm">{{$d->country->name}}</td>
                         <td class="text-center font-size-sm" style="width: 15%;">{{$d->phone??'<em class="text-muted font-size-sm">None</em>'}}</td>
                         <td class="text-center font-size-sm" {!!$d->website==''? '':'data-toggle="popover" data-animation="true" data-placement="bottom" data-content="'.$d->website.'" '!!}>{!!$d->website==''?'<em class="text-muted font-size-sm">None</em>':'<a href="'.$d->website.'"><i>[Link Website]</i></a>'!!}</td>
-                        <td class="text-center font-size-sm">{{ucwords($General->readmore($d->address,25))}}</td>
+                        <td class="text-center font-size-sm" data-toggle="popover" data-animation="true" data-placement="bottom" data-content="{{$d->address}}" >{{ucwords($General->readmore($d->address,25))}}</td>
                         <td class="text-center">
                             <div class="btn-group">
                                 <a href="{{url('destination/'.$d->id.'/show')}}" type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" title="Detail"><i class="fas fa-fw fa-list"></i></a>
