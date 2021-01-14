@@ -43,7 +43,7 @@
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
-@stack('child-scripts')
+{{-- @stack('child-scripts') --}}
 <script>
     Livewire.restart();
     jQuery(function () {

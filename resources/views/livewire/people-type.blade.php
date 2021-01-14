@@ -12,5 +12,4 @@
             Siap.helpers(['select2']);
         });
     </script>
-    
 </div>

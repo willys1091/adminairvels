@@ -1,7 +1,7 @@
 <div class="col-lg-4">
     <div class="form-group" wire:ignore>
         <label for="Company">Country <span class="merah">*</span></label>
-        <select wire:model="country" class="js-select2 form-control" name="company" style="width: 100%;"data-placeholder="Choose one..">
+        <select wire:model="country" class="js-select2 form-control" name="country" style="width: 100%;"data-placeholder="Choose one..">
             <option></option>
             @foreach($data as $d)
                 <option value="{{$d->id}}">{{$d->name}}</option>

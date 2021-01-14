@@ -16,13 +16,13 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">State </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="state" placeholder="State" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">City </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="city" placeholder="City" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -31,13 +31,13 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Phone </label>
-                            <input type="text" class="form-control numonly" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" maxlength="13" required>
+                            <input type="text" class="form-control numonly" name="phone" placeholder="Phone" value="{{$action=='edit'?$data->name:''}}" maxlength="13" required>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Website </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="Website" placeholder="Website" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,16 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="Name">maps </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="maps" placeholder="Maps" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-11">
+                        <label for="Title">Address <span class="merah">*</span></label>
+                        <textarea class="js-maxlength form-control" name="address" rows="2" maxlength="1000" placeholder="Address" data-placement="right" data-always-show="true">{{$action=='edit'?$data->address:''}}</textarea>
+                        {{-- <textarea class="js-maxlength form-control" name="address" rows="2" maxlength="1000" placeholder="Address" data-threshold="5" data-placement="right">{{$action=='edit'?$data->address:''}}</textarea> --}}
                     </div>
                 </div>
 
@@ -56,7 +64,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Price </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control numonly" name="price" placeholder="Price" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -91,9 +99,10 @@
     <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
     <script src="{{asset('public/js/siapfulin.js')}}"></script>
     <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+    <script src="{{asset('public/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
     <script>
         jQuery(function () {
-            Siap.helpers([ 'flatpickr']);
+            Siap.helpers([ 'flatpickr', 'maxlength']);
         });
     </script>
 @endsection

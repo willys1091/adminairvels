@@ -5,7 +5,7 @@
 
     <div class="col-lg-2">
         <div class="custom-control custom-switch custom-control-lg mb-2">
-            <input wire:model="check" type="checkbox"class="custom-control-input" id="open{{$day}}" name="open{{$day}}" value="1">
+            <input wire:model="check" type="checkbox"class="custom-control-input" id="open{{$day}}" name="{{$day}}" value="1">
             <label class="custom-control-label" for="open{{$day}}"><b>{{$open}}</b></label>
         </div>
     </div>
