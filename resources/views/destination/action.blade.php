@@ -12,17 +12,7 @@
                     @livewire('destination-name', ['action' => $action , 'dataname' => $data->name ?? 0])
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label for="Company">Country <span class="merah">*</span></label>
-                            <select class="js-select2 form-control" name="company" style="width: 100%;"data-placeholder="Choose one..">
-                                <option></option>
-                                @foreach($country as $c)
-                                    <option value="{{$c->id}}">{{$c->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+                    @livewire('destination-country', ['action' => $action , 'datacountry' => $data->country ?? 0])
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">State </label>
@@ -41,7 +31,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Phone </label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control numonly" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" maxlength="13" required>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -51,14 +41,18 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="Name">Currency </label>
+                            <label for="Name">maps </label>
                             <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    @livewire('destination-currency', ['action' => $action , 'datacurrency' => $data->currency ?? 0])
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Price </label>
@@ -72,17 +66,12 @@
                             <label for="Name">Working Hours</label><br>
                         </div>
                     </div>
-                   
-                   
-                   
-                   
                 </div>
                 @livewire('destination-workinghours', ['action' => $action , 'dataworking' => $data->working ?? 0])
                 
                 <div class="row">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> {{$action=='add' ? 'Create' : 'Save'}}</button>
-        
                     </div>
                 </div>
             </form>
@@ -103,9 +92,8 @@
     <script src="{{asset('public/js/siapfulin.js')}}"></script>
     <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
     <script>
-        Livewire.restart();
         jQuery(function () {
-            Siap.helpers([ 'flatpickr','select2']);
+            Siap.helpers([ 'flatpickr']);
         });
     </script>
 @endsection

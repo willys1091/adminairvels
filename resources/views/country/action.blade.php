@@ -19,6 +19,10 @@
                 <label for="Name">Name <span class="merah">*</span></label>
                 <input type="text" class="form-control" name="name" placeholder="Name" value="{{$action=='edit'?$data->name:''}}" required>
             </div>
+            <div class="form-group col-sm-6">
+                <label for="Name">Currency <span class="merah">*</span></label>
+                <input type="text" class="form-control" name="currency" placeholder="Currency" value="{{$action=='edit'?$data->currency:''}}" required>
+            </div>
         </div>
        
         @livewire('country-img', ['action' => $action , 'databanner' => $data->img_banner ?? 0 ,  'databackground' => $data->img_background ?? 0])

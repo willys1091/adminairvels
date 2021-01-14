@@ -6,4 +6,11 @@
             <label class="custom-control-label font-w600" for="admin">Admin</label>
         </div>
     </div>
+    <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
+    <script>
+        jQuery(function () {
+            Siap.helpers(['select2']);
+        });
+    </script>
+    
 </div>

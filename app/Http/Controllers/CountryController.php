@@ -28,6 +28,7 @@ class CountryController extends Controller{
     public function store(Request $request){
         $data = new country;
         $data->name = $request->name;
+        $data->currency = $request->currency;
         $data->img_background = $request->name.'.'.$request->backgroundext;
         $data->img_banner = $request->name.'.'.$request->bannerext;
         $data->desc_banner = $request->desc;
@@ -57,6 +58,7 @@ class CountryController extends Controller{
     public function update(Request $request, $id){
         $data = country::findorfail($id);
         $data->name = $request->name;
+        $data->currency = $request->currency;
         $request->userfile <> "" ? $data->img_background = $request->name.'.'.$request->backgroundext : "";
         $request->userfile2 <> "" ? $data->img_banner = $request->name.'.'.$request->bannerext : "";
         $data->desc_banner = $request->desc;

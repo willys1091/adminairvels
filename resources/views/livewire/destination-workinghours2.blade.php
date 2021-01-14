@@ -30,4 +30,12 @@
             </div>
         </div>
     @endif
+    <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+    <script src="{{asset('public/js/siapfulin.core.min.js')}}"></script>
+    <script src="{{asset('public/js/siapfulin.app.min.js')}}"></script>
+    <script>
+        jQuery(function () {
+            Siap.helpers([ 'flatpickr','select2']);
+        });
+    </script>
 </div>

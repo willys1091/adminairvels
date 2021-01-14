@@ -10,4 +10,23 @@
         </select>
     </div>
   
+    <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('public/js/siapfulin.core.min.js')}}"></script>
+    <script src="{{asset('public/js/siapfulin.app.min.js')}}"></script>
+    <script>
+        window.livewire.on('change', () => {
+            jQuery(function () {
+                Siap.helpers([ 'select2']);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+             $('.js-select2').select2({
+            }).prepend('<option></option>')
+           
+    
+           
+        });
+    </script>
 </div>

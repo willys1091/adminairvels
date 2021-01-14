@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Models\destination;
-use App\Models\country;
+
 
 class DestinationController extends Controller{
     use \App\Traits\General; 
@@ -21,7 +21,10 @@ class DestinationController extends Controller{
     public function create(){
         $data['title'] = "Destination | Airvels";
         $data['action'] = "add";
-        $data['country'] = country::where('active','1')->get();
+        $data['contentHeader']= "bc";
+        $bc[]= array('title'=> 'Destination','url'=>'destination','active'=>'0');
+        $bc[]= array('title'=> 'Create','url'=>'','active'=>'1');
+        $data['bc'] = $bc;
         return view('destination.action',$data); 
     }
 
