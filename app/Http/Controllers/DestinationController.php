@@ -16,30 +16,7 @@ class DestinationController extends Controller{
         $data['contentHeader'] = "btn";
         $data['btn'] = array('title' => 'Add Destination', 'url' => 'destination/create', 'icon' => 'fas fa-plus');
         $data['destination'] = destination::all();
-
-        $des = destination::where('work_hour2',null)->get();
-        $x = 0;
-        foreach($des as $d){
-                if($x<1000){
-                    if($d->work_hour<>''){
-                        // echo $d->id;
-                        // echo $d->work_hour;
-                        // echo "<br>";
-                        // echo "<br>";
-                $wh = unserialize($d->work_hour);
-
-                foreach($wh as $w){
-                    $wh2[$w['day']]['open'] = $w['open'];
-                    $wh2[$w['day']]['close'] = $w['close'];
-                }
-                $dess = destination::findorfail($d->id);
-                $dess->work_hour2 = json_encode($wh2);
-                $dess->save();
-                $x++;
-                }
-            }
-        }
-       // return view('destination.index',$data);
+        return view('destination.index',$data);
     }
 
     public function create(){

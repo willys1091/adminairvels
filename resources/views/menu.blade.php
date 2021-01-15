@@ -55,13 +55,13 @@
                     </ul>
                 </li>
 
-                <li class="nav-main-item">
+                {{-- <li class="nav-main-item">
                     <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"
                         href="{{url('integration')}}">
                         <i class="nav-main-link-icon fa fa-puzzle-piece"></i>
                         <span class="nav-main-link-name">Integration</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-main-item {{request::segment(1)=='people'||request::segment(1)=='role'?'open':''}}">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
