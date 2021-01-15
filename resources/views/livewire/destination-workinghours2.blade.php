@@ -1,4 +1,5 @@
 <div class="row">
+  
     <div class="col-lg-2">
         <div class="form-group"><label for="Name">{{$day}}</label></div>
     </div>
@@ -21,12 +22,12 @@
         @endif
         <div class="col-lg-3">
             <div class="form-group">
-                <input type="text" class="js-flatpickr form-control bg-white"  name="open{{$day}}" data-enable-time="true" data-no-calendar="true" data-date-format="H:i" data-time_24hr="true" value="{{$time=='1'?'00:00':''}}" placeholder="Open">
+                <input wire:model="opentime" type="text" class="js-flatpickr form-control bg-white"  name="open{{$day}}" data-enable-time="true" data-no-calendar="true" data-date-format="H:i" data-time_24hr="true"  placeholder="Open">
             </div>
         </div>
         <div class="col-lg-3">
             <div class="form-group">
-                <input type="text" class="js-flatpickr form-control bg-white"  name="close{{$day}}" data-enable-time="true" data-no-calendar="true" data-date-format="H:i" data-time_24hr="true" value="{{$time=='1'?'23:59':''}}" placeholder="Close">
+                <input wire:model="closetime" type="text" class="js-flatpickr form-control bg-white"  name="close{{$day}}" data-enable-time="true" data-no-calendar="true" data-date-format="H:i" data-time_24hr="true" placeholder="Close">
             </div>
         </div>
     @endif

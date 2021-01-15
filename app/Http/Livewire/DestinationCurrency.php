@@ -12,7 +12,7 @@ class DestinationCurrency extends Component{
 
     public function mount($action,$datacurrency){
         $this->action = $action;
-        $this->datacurrency = $datacurrency;
+        $this->currency = $datacurrency<>'0'?$datacurrency:'';
     }
 
     public function country($country){

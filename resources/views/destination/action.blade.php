@@ -3,6 +3,7 @@
 <div class="content">
     <div class="block block-rounded">
         <div class="block-content block-content-full">
+
             @if($action=='add')
                 <form action="{{url('destination')}}" method="post" onsubmit="submit.disabled = true; return true;" name="roleform">
             @else
@@ -11,18 +12,19 @@
                 <div class="row">   
                     @livewire('destination-name', ['action' => $action , 'dataname' => $data->name ?? 0])
                 </div>
+              
                 <div class="row">
-                    @livewire('destination-country', ['action' => $action , 'datacountry' => $data->country ?? 0])
+                    @livewire('destination-country', ['action' => $action , 'datacountry' => $data->country_id ?? 0])
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">State </label>
-                            <input type="text" class="form-control" name="state" placeholder="State" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="state" placeholder="State" value="{{$action=='edit'?$data->state:''}}">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">City </label>
-                            <input type="text" class="form-control" name="city" placeholder="City" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="city" placeholder="City" value="{{$action=='edit'?$data->city:''}}">
                         </div>
                     </div>
                 </div>
@@ -31,13 +33,13 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Phone </label>
-                            <input type="text" class="form-control numonly" name="phone" placeholder="Phone" value="{{$action=='edit'?$data->name:''}}" maxlength="13" required>
+                            <input type="text" class="form-control numonly" name="phone" placeholder="Phone" value="{{$action=='edit'?$data->phone:''}}" maxlength="13" required>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Website </label>
-                            <input type="text" class="form-control" name="Website" placeholder="Website" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="website" placeholder="Website" value="{{$action=='edit'?$data->website:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -46,7 +48,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="Name">maps </label>
-                            <input type="text" class="form-control" name="maps" placeholder="Maps" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control" name="maps" placeholder="Maps" value="{{$action=='edit'?$data->map:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -55,7 +57,6 @@
                     <div class="form-group col-sm-11">
                         <label for="Title">Address <span class="merah">*</span></label>
                         <textarea class="js-maxlength form-control" name="address" rows="2" maxlength="1000" placeholder="Address" data-placement="right" data-always-show="true">{{$action=='edit'?$data->address:''}}</textarea>
-                        {{-- <textarea class="js-maxlength form-control" name="address" rows="2" maxlength="1000" placeholder="Address" data-threshold="5" data-placement="right">{{$action=='edit'?$data->address:''}}</textarea> --}}
                     </div>
                 </div>
 
@@ -64,7 +65,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="Name">Price </label>
-                            <input type="text" class="form-control numonly" name="price" placeholder="Price" value="{{$action=='edit'?$data->name:''}}" required>
+                            <input type="text" class="form-control numonly" name="price" placeholder="Price" value="{{$action=='edit'?$data->price:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                @livewire('destination-workinghours', ['action' => $action , 'dataworking' => $data->working ?? 0])
+                @livewire('destination-workinghours', ['action' => $action , 'dataworking' => $data->work_hour2 ?? 0])
                 
                 <div class="row">
                     <div class="col-md-12">

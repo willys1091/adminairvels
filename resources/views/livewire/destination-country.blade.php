@@ -4,7 +4,7 @@
         <select wire:model="country" class="js-select2 form-control" name="country" style="width: 100%;"data-placeholder="Choose one..">
             <option></option>
             @foreach($data as $d)
-                <option value="{{$d->id}}">{{$d->name}}</option>
+                <option value="{{$d->id}}" {{$d->id=$country?"selected":""}}>{{$d->name}}</option>
             @endforeach
         </select>
     </div>

@@ -11,6 +11,7 @@ class DestinationName extends Component{
     public function mount($action,$dataname){
         $this->action = $action;
         $this->dataname = $dataname<>'0'?$dataname:'';
+        $this->name = $dataname<>'0'?$dataname:'';
     }
 
     public function updated(){

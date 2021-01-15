@@ -10,7 +10,7 @@ class DestinationWorkinghours extends Component{
 
     public function mount($action,$dataworking){
         $this->action = $action;
-        $this->dataworking = $dataworking;
+        $this->dataworking = $dataworking<>'0'?$dataworking:'';
     }
 
     public function render(){

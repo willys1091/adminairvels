@@ -10,6 +10,7 @@ class DestinationCountry extends Component{
     public $country;
 
     public function mount($action,$datacountry){
+        $this->country = $datacountry<>0?$datacountry:'';
         $this->data = country::where('active','1')->get();
     }
 
