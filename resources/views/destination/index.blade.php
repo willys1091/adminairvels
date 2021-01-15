@@ -13,6 +13,7 @@
                         <th>Phone</th>
                         <th>Website</th>
                         <th>Address</th>
+                        <th>Working Hours</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -26,9 +27,10 @@
                         <td class="text-center font-size-sm" style="width: 15%;">{{$d->phone??'<em class="text-muted font-size-sm">None</em>'}}</td>
                         <td class="text-center font-size-sm" {!!$d->website==''? '':'data-toggle="popover" data-animation="true" data-placement="bottom" data-content="'.$d->website.'" '!!}>{!!$d->website==''?'<em class="text-muted font-size-sm">None</em>':'<a href="'.$d->website.'"><i>[Link Website]</i></a>'!!}</td>
                         <td class="text-center font-size-sm" data-toggle="popover" data-animation="true" data-placement="bottom" data-content="{{$d->address}}" >{{ucwords($General->readmore($d->address,25))}}</td>
+                        <td class="text-center font-size-sm" style="width: 15%;">{!!$d->work_hour?'<a onClick=\'showM("'.url('destination/'.$d->id.'/workhours').'"  );return false\' type="button" class="btn btn-sm btn-success" data-toggle="tooltip" title="Working Hours"><i class="fas fa-fw fa-clock"></i></a>':'<em class="text-muted font-size-sm">None</em>'!!}</td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <a href="{{url('destination/'.$d->id.'/show')}}" type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" title="Detail"><i class="fas fa-fw fa-list"></i></a>
+                                <a onClick='showM("{{url('destination/'.$d->id.'/show')}}");return false' type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" title="Detail"><i class="fas fa-fw fa-list"></i></a>
                                 <a href="{{url('destination/'.$d->id.'/edit')}}" type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit"><i class="fas fa-fw fa-pencil-alt"></i></a>
                             </div>
                         </td> 

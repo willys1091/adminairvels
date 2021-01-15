@@ -119,7 +119,9 @@ class DestinationController extends Controller{
         return redirect('destination');
      }
 
-    public function destroy($id){
-        //
+    public function workhours($id){
+        $data['title'] = "Working Hours | Airvels";
+        $data['working'] = destination::where('id',$id)->value('work_hour2');
+        return view('destination.working',$data); 
     }
 }

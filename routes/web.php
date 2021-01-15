@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('destination/{id}/show' , "DestinationController@show");
     Route::get('destination/{id}/edit' , "DestinationController@edit");
     Route::Patch('destination/{id}' , "DestinationController@update");
+    Route::get('destination/{id}/workhours' , "DestinationController@workhours");
     
     Route::get('people/{modul}', "PeopleController@index");
     Route::get('people/{modul}/create', "PeopleController@create");

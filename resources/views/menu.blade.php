@@ -41,6 +41,21 @@
                 </li>
               
                 <li class="nav-main-item">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <i class="nav-main-link-icon fa fa-film"></i><span class="nav-main-link-name">Video</span>
+                    </a>
+                    <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="be_forms_elements.html"><span class="nav-main-link-name">Content</span></a>
+                        </li>
+
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="be_forms_elements.html"><span class="nav-main-link-name">Saved</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                {{-- <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                         aria-expanded="false" href="#">
                         <i class="nav-main-link-icon fa fa-chart-line"></i>
@@ -53,7 +68,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 {{-- <li class="nav-main-item">
                     <a class="nav-main-link {{request::segment(1)=='integration'?"active":""}}"
