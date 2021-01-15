@@ -9,6 +9,7 @@
                     <tr>
                         <th class="text-center">ID</th>
                         <th>Name</th>
+                        <th>Currency</th>
                         <th>Background</th>
                         <th>Banner</th>
                         <th>Description</th>
@@ -21,6 +22,7 @@
                     <tr>
                         <td class="text-center font-size-sm">{{$x}}</td>
                         <td class="d-sm-table-cell font-size-sm">{{$c->name}}</td>
+                        <td class="d-sm-table-cell font-size-sm">{{$c->currency}}</td>
                         <td class="d-sm-table-cell font-size-sm"><img src="https://doc.airvels.com/img/homepage/{{$c->img_background}}" width="100px" alt="Background"></td>
                         <td class="d-sm-table-cell font-size-sm"><img src="https://doc.airvels.com/img/banner/{{$c->img_banner}}" width="200px" alt="Banner"></td>
                         <td class="d-sm-table-cell font-size-sm" data-toggle="popover" data-animation="true" data-placement="bottom" data-content="{{$c->desc_banner}}">{{$General->readmore($c->desc_banner,30)}}</td>
