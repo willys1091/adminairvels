@@ -19,7 +19,7 @@
                     <tr>
                         <td class="text-center font-size-sm">{{$x}}</td>
                         <td class="d-sm-table-cell font-size-sm">{{$r->name}}</td>
-                        <td class="d-sm-table-cell font-size-sm"><span class="badge badge-{{$r->type=='admin'?'danger':'success'}}">{{ucwords($r->type)}}</span></td>
+                        <td class="d-sm-table-cell font-size-lg"><span class="badge badge-{{$r->type=='admin'?'danger':'success'}}">{{ucwords($r->type)}}</span></td>
                         
                         <td class="text-center">
                             <div class="btn-group">

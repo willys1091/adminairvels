@@ -5,11 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 
 class PeopleType extends Component{
-    public $check,$type,$action,$datatype;
-    public $test;
+    public $check,$action,$datatype;
 
     public function mount($action,$datatype){
-        
         $this->action = $action;
         $this->datatype = $datatype;
         $this->check = $action=='edit'?($datatype=='admin'?'1':''):'';

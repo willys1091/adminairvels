@@ -33,10 +33,7 @@
                 </div>
             </div>
             @if($modul=='admin')
-            @livewire('people-role', ['action' => $action , 'datarole' => $data->roleid ?? 0])
-            
-
-
+                @livewire('people-role', ['action' => $action , 'datarole' => $data->roleid ?? 0, 'datatype' => $data->type ?? 0])
             @else
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -69,6 +66,9 @@
 </div>
 <script src="{{asset('public/js/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('public/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+@livewireStyles
+@livewireScripts
+@stack('scripts')
 <script>
     Livewire.restart();
    

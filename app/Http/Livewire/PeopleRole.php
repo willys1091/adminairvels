@@ -5,14 +5,15 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\role;
 
-class PeopleRole extends Component
-{
+class PeopleRole extends Component{
     public $data=[];
-    public $tipes='user';
+    public $tipes,$datarole;
 
     protected $listeners = ['role'];
 
-    public function mount($action,$datarole){
+    public function mount($action,$datarole,$datatype){
+        $this->datarole = $datarole<>0?$datarole:"";
+        $this->tipes = $action=="add"?"user":$datatype;
         $this->updated();
     }
 
@@ -27,6 +28,4 @@ class PeopleRole extends Component
     public function render(){
         return view('livewire.people-role');
     }
-
-   
 }
