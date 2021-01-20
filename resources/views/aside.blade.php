@@ -1,7 +1,7 @@
 <aside id="side-overlay">
     <div class="content-header border-bottom">
         <a class="img-link mr-1" href="javascript:void(0)">
-            <img class="img-avatar img-avatar32" src="{{asset('public/assets/media/avatars/avatar10.jpg')}}" alt="">
+            <img class="img-avatar img-avatar32" src="{{asset('public/media/avatars/avatar10.jpg')}}" alt="">
         </a>
         <div class="ml-2">
             <a class="text-dark font-w600 font-size-sm" href="javascript:void(0)">Adam McCoy</a>
@@ -97,7 +97,7 @@
                                     <a class="media py-2" href="javascript:void(0)">
                                         <div class="mr-3 ml-2 overlay-container overlay-bottom">
                                             <img class="img-avatar img-avatar48"
-                                                src={{asset("public/assets/media/avatars/avatar7.jpg")}} alt="">
+                                                src={{asset("public/media/avatars/avatar7.jpg")}} alt="">
                                             <span
                                                 class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
@@ -111,7 +111,7 @@
                                     <a class="media py-2" href="javascript:void(0)">
                                         <div class="mr-3 ml-2 overlay-container overlay-bottom">
                                             <img class="img-avatar img-avatar48"
-                                                src={{asset("public/assets/media/avatars/avatar12.jpg")}} alt="">
+                                                src={{asset("public/media/avatars/avatar12.jpg")}} alt="">
                                             <span
                                                 class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
@@ -125,7 +125,7 @@
                                     <a class="media py-2" href="javascript:void(0)">
                                         <div class="mr-3 ml-2 overlay-container overlay-bottom">
                                             <img class="img-avatar img-avatar48"
-                                                src={{asset("public/assets/media/avatars/avatar6.jpg")}} alt="">
+                                                src={{asset("public/media/avatars/avatar6.jpg")}} alt="">
                                             <span
                                                 class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
@@ -139,7 +139,7 @@
                                     <a class="media py-2" href="javascript:void(0)">
                                         <div class="mr-3 ml-2 overlay-container overlay-bottom">
                                             <img class="img-avatar img-avatar48"
-                                                src={{asset("public/assets/media/avatars/avatar5.jpg")}} alt="">
+                                                src={{asset("public/media/avatars/avatar5.jpg")}} alt="">
                                             <span
                                                 class="overlay-item item item-tiny item-circle border border-2x border-white bg-warning"></span>
                                         </div>
@@ -153,7 +153,7 @@
                                     <a class="media py-2" href="javascript:void(0)">
                                         <div class="mr-3 ml-2 overlay-container overlay-bottom">
                                             <img class="img-avatar img-avatar48"
-                                                src={{asset("public/assets/media/avatars/avatar14.jpg")}} alt="">
+                                                src={{asset("public/media/avatars/avatar14.jpg")}} alt="">
                                             <span
                                                 class="overlay-item item item-tiny item-circle border border-2x border-white bg-warning"></span>
                                         </div>
